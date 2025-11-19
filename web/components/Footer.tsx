@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { LogoMark } from "./LogoMark";
 
 type FooterProps = {
@@ -5,10 +6,10 @@ type FooterProps = {
 };
 
 const quickLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#process", label: "Our process" },
-  { href: "#reviews", label: "Reviews" },
-  { href: "#contact", label: "Book a visit" },
+  { href: "/", label: "Home" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/case-studies", label: "Case studies" },
+  { href: "/contact", label: "Book a visit" },
 ];
 
 const contactChannels = [
@@ -90,14 +91,14 @@ export function Footer({ serviceAreas }: FooterProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60">Navigate</p>
               <div className="mt-3 flex flex-col gap-2 text-sm">
                 {quickLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
                     className="flex items-center gap-2 text-white/85 transition hover:text-[var(--accent-aqua)]"
                   >
                     <IconArrow />
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

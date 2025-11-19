@@ -1,11 +1,8 @@
 export const siteNavLinks = [
-  { href: "/#services", label: "Services" },
-  { href: "/#proof", label: "Proof" },
-  { href: "/#process", label: "Process" },
-  { href: "/#reviews", label: "Reviews" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/case-studies", label: "Case studies" },
-  { href: "/products", label: "Products" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export type SiteNavLink = (typeof siteNavLinks)[number];

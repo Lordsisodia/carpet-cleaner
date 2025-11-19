@@ -10,7 +10,7 @@ type NavLink = {
 };
 
 type HeaderProps = {
-  navLinks: NavLink[];
+  navLinks: ReadonlyArray<NavLink>;
 };
 
 export function Header({ navLinks }: HeaderProps) {
@@ -46,7 +46,9 @@ export function Header({ navLinks }: HeaderProps) {
       <header className="sticky top-4 z-30">
         <div className="flex flex-col gap-3 rounded-[32px] border border-white/50 bg-white/90 px-5 py-4 text-sm shadow-[0_20px_40px_rgba(3,21,50,0.08)] backdrop-blur-xl sm:px-6 sm:py-5">
           <div className="flex flex-wrap items-center gap-3 lg:flex-nowrap">
-            <LogoMark />
+            <Link href="/" aria-label="The Carpet Lad home" className="inline-flex items-center">
+              <LogoMark />
+            </Link>
             <nav
               className="hidden flex-1 flex-wrap items-center justify-center gap-2 text-sm font-medium text-[var(--neutral-700)] lg:flex"
               aria-label="Primary"
@@ -63,13 +65,13 @@ export function Header({ navLinks }: HeaderProps) {
             </nav>
             <div className="hidden items-center gap-2 lg:flex">
               <Link
-                href="/#reviews"
+                href="/reviews"
                 className="rounded-full border border-[var(--brand-primary-200)] px-4 py-2 text-sm font-semibold text-[var(--brand-primary-500)] transition hover:border-[var(--brand-primary-500)]"
               >
                 Leave a review
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="rounded-full bg-[var(--accent-aqua)] px-4 py-2 text-sm font-semibold text-[var(--brand-primary-900)] shadow-[0_10px_25px_rgba(8,55,119,0.18)] transition hover:-translate-y-[1px]"
               >
                 Book cleaning
@@ -82,7 +84,7 @@ export function Header({ navLinks }: HeaderProps) {
               Same-week openings
             </span>
             <Link
-              href="/#contact"
+              href="/contact"
               className="flex-1 rounded-full bg-[var(--accent-aqua)] px-4 py-2 text-center text-sm font-semibold text-[var(--brand-primary-900)] shadow-[0_10px_25px_rgba(8,55,119,0.18)]"
             >
               Book cleaning
@@ -140,14 +142,14 @@ export function Header({ navLinks }: HeaderProps) {
               ))}
             </div>
             <Link
-              href="/#contact"
+              href="/contact"
               className="mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-[var(--brand-primary-900)] px-4 py-3 text-sm font-semibold text-white shadow-[0_15px_40px_rgba(5,16,41,0.25)]"
               onClick={closeMenu}
             >
               Book a cleaning
             </Link>
             <Link
-              href="/#reviews"
+              href="/reviews"
               className="mt-3 block text-center text-sm font-semibold text-[var(--brand-primary-500)]"
               onClick={closeMenu}
             >

@@ -1,9 +1,10 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { serviceAreas } from "@/lib/constants";
 import { siteNavLinks } from "@/lib/navLinks";
-import type { Metadata } from "next";
-import Link from "next/link";
 
 const caseStudies = [
   {
@@ -74,14 +75,15 @@ export default function CaseStudiesPage() {
           </p>
         </section>
 
-        <section className="section-shell grid gap-6 md:grid-cols-2">
+        <section className="section-shell space-y-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
           {caseStudies.map((study) => (
             <article
               key={study.title}
-              className="flex h-full flex-col gap-5 rounded-[28px] bg-white p-6 shadow-[var(--shadow-soft)]"
+              className="flex h-full flex-col gap-5 rounded-[32px] border border-white/70 bg-white px-5 py-6 shadow-[0_25px_45px_rgba(4,21,49,0.08)] sm:px-6"
             >
-              <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.35em] text-[var(--neutral-400)]">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--neutral-400)]">
                 <span>{study.location}</span>
+                <span className="h-1 w-1 rounded-full bg-[var(--neutral-200)]" aria-hidden />
                 <span>{study.service}</span>
               </div>
               <div>
@@ -92,7 +94,7 @@ export default function CaseStudiesPage() {
                   {study.solution}
                 </p>
               </div>
-              <dl className="grid grid-cols-3 gap-3 text-center text-sm">
+              <dl className="grid grid-cols-2 gap-3 text-center text-sm sm:grid-cols-3">
                 {study.metrics.map((metric) => (
                   <div key={metric.label} className="rounded-2xl border border-[var(--neutral-200)] p-3">
                     <dt className="text-xs uppercase tracking-[0.25em] text-[var(--neutral-500)]">{metric.label}</dt>

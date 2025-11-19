@@ -2,6 +2,7 @@ import ContactForm from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import ReviewForm from "@/components/ReviewForm";
+import { contactMethods, reviewChannels, reviews } from "@/lib/content";
 import { serviceAreas } from "@/lib/constants";
 import { siteNavLinks } from "@/lib/navLinks";
 import Link from "next/link";
@@ -75,36 +76,6 @@ const processSteps = [
   },
 ];
 
-const reviews = [
-  {
-    author: "Ariel M.",
-    location: "Hackney, London",
-    service: "Pet treatment",
-    rating: 5,
-    quote:
-      "The Carpet Lad lifted every trace of our puppy accident and the flat smelt brand new before dinner service.",
-    channel: "Google",
-  },
-  {
-    author: "Sanjay R.",
-    location: "Clapham",
-    service: "Whole-flat",
-    rating: 5,
-    quote:
-      "They texted when en route, walked every room, and left us with a video recap + care tips. Zero residue, zero stress.",
-    channel: "Trustpilot",
-  },
-  {
-    author: "Lena K.",
-    location: "Islington",
-    service: "Upholstery",
-    rating: 5,
-    quote:
-      "Our cream corner sofa finally looks cream again. I loved the protective spray and the leave-behind kit for spot cleaning.",
-    channel: "Google",
-  },
-];
-
 const faqs = [
   {
     q: "How fast does everything dry?",
@@ -118,27 +89,6 @@ const faqs = [
     q: "Can I leave a review later?",
     a: "Yes—submit below or reply to our follow-up text/email with photos and we’ll publish within 24 hours.",
   },
-];
-
-const contactMethods = [
-  {
-    label: "Call or text",
-    value: "07545 836823",
-    href: "tel:+447545836823",
-    detail: "Live humans 7a–9p GMT",
-  },
-  {
-    label: "Email",
-    value: "thecarpetlad@gmail.com",
-    href: "mailto:thecarpetlad@gmail.com",
-    detail: "Average reply < 1 hr",
-  },
-];
-
-const reviewChannels = [
-  { label: "Google", rating: "4.9", count: "268", url: "#" },
-  { label: "Trustpilot", rating: "4.8", count: "58", url: "#" },
-  { label: "Checkatrade", rating: "5.0", count: "20", url: "#" },
 ];
 
 const StarIcon = ({ filled }: { filled: boolean }) => (
@@ -177,13 +127,13 @@ export default function Home() {
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[var(--brand-primary-700)] shadow-lg"
                   >
                     Book a cleaning
                   </Link>
                   <Link
-                    href="/#reviews"
+                    href="/reviews"
                     className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white"
                   >
                     Browse 300+ reviews
